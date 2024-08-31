@@ -32,7 +32,47 @@ body {
     border-radius: 7.5px 7.5px 7.5px 7.5px;
     animation: float 10s infinite;
 }
+<<<<<<< HEAD
 
+=======
+/*
+.pill:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    background: linear-gradient(to bottom right, #ffcc00, #ff6600);
+}
+
+.pill:nth-child(2) {
+    top: 30%;
+    left: 70%;
+    background: linear-gradient(to bottom right, #66ccff, #3399ff);
+}
+
+.pill:nth-child(3) {
+    top: 50%;
+    left: 40%;
+    background: linear-gradient(to bottom right, #99cc33, #66cc66);
+}
+
+.pill:nth-child(4) {
+    top: 70%;
+    left: 80%;
+    background: linear-gradient(to bottom right, #cc33cc, #ff66ff);
+}
+
+.pill:nth-child(5) {
+    top: 20%;
+    left: 60%;
+    background: linear-gradient(to bottom right, #ff9966, #ff6633);
+}
+
+.pill:nth-child(6) {
+    top: 80%;
+    left: 10%;
+    background: linear-gradient(to bottom right, #ffff66, #ffcc00);
+}
+*/
+>>>>>>> aaaa4885acf57a88ca09dc800280944fae21f178
 
 @keyframes float {
     0% { transform: translateY(0) rotate(0deg); }

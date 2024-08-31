@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 
+=======
+// Sample data for countries
+>>>>>>> aaaa4885acf57a88ca09dc800280944fae21f178
 const data = {
     "Austria": [
         { "year": 2011, "dosage": 57.2 },
@@ -316,7 +320,11 @@ const data = {
         { "year": 2021, "dosage": 138.2 }
       ] 
 };
+<<<<<<< HEAD
 
+=======
+ // Set up SVG and scales
+>>>>>>> aaaa4885acf57a88ca09dc800280944fae21f178
 const svg = d3.select("svg");
 const margin = { top: 20, right: 30, bottom: 40, left: 50 };
 const width = svg.attr("width") - margin.left - margin.right;
@@ -327,23 +335,37 @@ const yScale = d3.scaleLinear().domain([0, 160]).range([height, 0]);
 
 const g = svg.append("g")
   .attr("transform", `translate(${margin.left},${margin.top})`);
+<<<<<<< HEAD
 
+=======
+// X-axis grid lines
+>>>>>>> aaaa4885acf57a88ca09dc800280944fae21f178
 g.append("g")
   .attr("class", "grid")
   .attr("transform", `translate(0,${height})`)
   .call(d3.axisBottom(xScale)
+<<<<<<< HEAD
     .tickSize(-height)         
     .tickFormat(""))           
+=======
+    .tickSize(-height)         // Grid lines across height
+    .tickFormat(""))           // Hide tick labels for grid
+>>>>>>> aaaa4885acf57a88ca09dc800280944fae21f178
   .selectAll("line")
   .attr("stroke", "white")
   .attr("stroke-opacity", 0.7);
 
+<<<<<<< HEAD
 
+=======
+// X-axis with longer tick marks and labels
+>>>>>>> aaaa4885acf57a88ca09dc800280944fae21f178
 g.append("g")
   .attr("class", "x-axis")
   .attr("transform", `translate(0,${height})`)
   .call(d3.axisBottom(xScale)
     .tickFormat(d3.format("d"))
+<<<<<<< HEAD
     .tickSizeInner(10)         
     .tickSizeOuter(0))         
   .selectAll("text")
@@ -355,10 +377,25 @@ g.append("g")
   .call(d3.axisLeft(yScale)
     .tickSize(-width)          
     .tickFormat(""))           
+=======
+    .tickSizeInner(10)         // Longer tick marks (e.g., 10 pixels)
+    .tickSizeOuter(0))         // No outer tick marks
+  .selectAll("text")
+  .style("fill", "white")       // X-axis labels color
+  .attr("stroke-opacity", 0.7);
+
+// Y-axis grid lines
+g.append("g")
+  .attr("class", "grid")
+  .call(d3.axisLeft(yScale)
+    .tickSize(-width)          // Grid lines across width
+    .tickFormat(""))           // Hide tick labels for grid
+>>>>>>> aaaa4885acf57a88ca09dc800280944fae21f178
   .selectAll("line")
   .attr("stroke", "white")
   .attr("stroke-opacity", 0.7);
 
+<<<<<<< HEAD
 
 g.append("g")
   .attr("class", "y-axis")
@@ -372,10 +409,26 @@ g.append("g")
 d3.selectAll(".x-axis .domain, .x-axis .tick line")
   .style("stroke", "white")
   .attr("stroke-width", 1)  
+=======
+// Y-axis with longer tick marks and labels
+g.append("g")
+  .attr("class", "y-axis")
+  .call(d3.axisLeft(yScale)
+    .tickSizeInner(10)         // Longer tick marks (e.g., 10 pixels)
+    .tickSizeOuter(0))         // No outer tick marks
+  .selectAll("text")
+  .style("fill", "white");      // Y-axis labels color
+
+// Apply white color to the axis lines and tick marks
+d3.selectAll(".x-axis .domain, .x-axis .tick line")
+  .style("stroke", "white")
+  .attr("stroke-width", 1)   // Tick mark styling for X-axis
+>>>>>>> aaaa4885acf57a88ca09dc800280944fae21f178
   .attr("stroke-opacity", 0.7);
 
 d3.selectAll(".y-axis .domain, .y-axis .tick line")
   .style("stroke", "white")
+<<<<<<< HEAD
   .attr("stroke-width", 1)   
   .attr("stroke-opacity", 0.7);
 
@@ -404,6 +457,36 @@ d3.selectAll(".y-axis .domain, .y-axis .tick line")
     "Sweden": "#a4bcfa",    // Baby Blue
     "Turkey": "#ffa96a",    // Baby Orange
     "UK": "#f6f386"        // Pastel Yellow
+=======
+  .attr("stroke-width", 1)   // Tick mark styling for Y-axis
+  .attr("stroke-opacity", 0.7);
+
+  const colorMapping = {
+    "Austria": "#1f77b4",   // Blue
+    "Belgium": "#ff7f0e",   // Orange
+    "Czechia": "#2ca02c",   // Green
+    "Denmark": "#d62728",   // Red
+    "Estonia": "#9467bd",   // Purple
+    "Finland": "#8c564b",   // Brown
+    "France": "#e377c2",    // Pink
+    "Germany": "#7f7f7f",   // Gray
+    "Greece": "#17becf",    // Light Blue
+    "Hungary": "#bcbd22",   // Olive
+    "Iceland": "#ff9896",   // Light Red
+    "Italy": "#c7c7c7",     // Light Gray
+    "Latvia": "#d62728",    // Red (same as Denmark for simplicity)
+    "Lithuania": "#ff7f0e", // Orange (same as Belgium for simplicity)
+    "Luxembourg": "#ffbb78",
+    "Netherlands": "#1f77b4", // Blue (same as Austria for simplicity)
+    "Norway": "#2ca02c",    // Green (same as Czechia for simplicity)
+    "Portugal": "#9467bd",  // Purple (same as Estonia for simplicity)
+    "Slovakia": "#8c564b",  // Brown (same as Finland for simplicity)
+    "Slovenia": "#e377c2",  // Pink (same as France for simplicity)
+    "Spain": "#7f7f7f",     // Gray (same as Germany for simplicity)
+    "Sweden": "#17becf",    // Light Blue (same as Greece for simplicity)
+    "Turkey": "#bcbd22",    // Olive (same as Hungary for simplicity)
+    "UK": "#ff9896"        // Light Red (same as Iceland for simplicity)
+>>>>>>> aaaa4885acf57a88ca09dc800280944fae21f178
   };
 
     function toggleCountry(country) {
@@ -411,11 +494,19 @@ d3.selectAll(".y-axis .domain, .y-axis .tick line")
       const isActive = button.classed("active");
       const color = colorMapping[country] || "#ffffff";
       if (isActive) {
+<<<<<<< HEAD
       
         g.selectAll(`.dot-${country}`).remove();
         button.classed("active", false).style("background-color", "grey");
       } else {
    
+=======
+        // Remove data
+        g.selectAll(`.dot-${country}`).remove();
+        button.classed("active", false).style("background-color", "grey");
+      } else {
+        // Add data
+>>>>>>> aaaa4885acf57a88ca09dc800280944fae21f178
         const countryData = data[country];
         g.selectAll(`.dot-${country}`)
           .data(countryData)
@@ -425,14 +516,23 @@ d3.selectAll(".y-axis .domain, .y-axis .tick line")
           .attr("cx", d => xScale(d.year))
           .attr("cy", d => yScale(d.dosage))
           .attr("r", 5)
+<<<<<<< HEAD
           .style("fill", color)
           .style("stroke", "white")          // Add white stroke
           .style("stroke-width", "1px"); 
+=======
+          .style("fill", color);
+
+>>>>>>> aaaa4885acf57a88ca09dc800280944fae21f178
         button.classed("active", true).style("background-color", "orange");
       }
     }
 
+<<<<<<< HEAD
 
+=======
+    // Set up button click handlers
+>>>>>>> aaaa4885acf57a88ca09dc800280944fae21f178
     d3.selectAll(".country-button").on("click", function () {
       const country = d3.select(this).attr("data-country");
       toggleCountry(country);

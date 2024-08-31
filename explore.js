@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 
+=======
+// Example data for different countries
+>>>>>>> aaaa4885acf57a88ca09dc800280944fae21f178
 const data = {
 
 
@@ -318,11 +322,18 @@ const data = {
         { "year": 2021, "dosage": 138.2 }
       ]
     };
+<<<<<<< HEAD
 
 function renderScatterPlot(countryData, countryName) {
     var scatterplotDiv = document.getElementById("scatterplot");
     
     scatterplotDiv.style.display = "block";
+=======
+// Function to render scatter plot
+function renderScatterPlot(countryData, countryName) {
+    const scatterplotDiv = document.getElementById("scatterplot");
+    scatterplotDiv.style.display = "block"; // Ensure the scatterplot is visible
+>>>>>>> aaaa4885acf57a88ca09dc800280944fae21f178
     const scatterplotCon = document.getElementById("scatterplot-container");
     scatterplotCon.style.display = "block";
   
@@ -331,7 +342,11 @@ function renderScatterPlot(countryData, countryName) {
     const svgHeight = 250;
     const margin = { top: 20, right: 30, bottom: 40, left: 50 };
   
+<<<<<<< HEAD
     
+=======
+    // Clear existing SVG
+>>>>>>> aaaa4885acf57a88ca09dc800280944fae21f178
     const svg = d3.select("#scatterplot").html("").append("svg")
         .attr("width", svgWidth)
         .attr("height", svgHeight)
@@ -351,10 +366,17 @@ function renderScatterPlot(countryData, countryName) {
         
   
     const y = d3.scaleLinear()
+<<<<<<< HEAD
         .domain([0, 160])  
         .range([height, 0]);
 
   
+=======
+        .domain([0, 160])  // Fixed domain from 0 to 160
+        .range([height, 0]);
+
+  // Add horizontal grid lines
+>>>>>>> aaaa4885acf57a88ca09dc800280944fae21f178
 g.append("g")
 .attr("class", "grid")
 .call(d3.axisLeft(y)
@@ -364,7 +386,11 @@ g.append("g")
 .attr("stroke", "white")
 .attr("stroke-opacity", 0.7);
 
+<<<<<<< HEAD
 
+=======
+// Add vertical grid lines
+>>>>>>> aaaa4885acf57a88ca09dc800280944fae21f178
 g.append("g")
 .attr("class", "grid")
 .attr("transform", `translate(0,${height})`)
@@ -382,7 +408,11 @@ g.append("g")
         .selectAll("path, line")
         .attr("stroke", "white");
     
+<<<<<<< HEAD
     
+=======
+    // Set the color of the x-axis labels to white
+>>>>>>> aaaa4885acf57a88ca09dc800280944fae21f178
 g.selectAll(".x-axis text")
         .attr("fill", "white");
     
@@ -392,6 +422,7 @@ g.append("g")
         .selectAll("path, line")
         .attr("stroke", "white");
     
+<<<<<<< HEAD
     
     g.selectAll(".y-axis text")
         .attr("fill", "white");
@@ -426,6 +457,42 @@ g.append("g")
   
     const color = colorMapping[countryName] || "#ffffff"; 
 
+=======
+    // Set the color of the y-axis labels to white
+    g.selectAll(".y-axis text")
+        .attr("fill", "white");
+    
+    // Define a custom color mapping
+    const colorMapping = {
+        "Austria": "#1f77b4",   // Blue
+        "Belgium": "#ff7f0e",   // Orange
+        "Czechia": "#2ca02c",   // Green
+        "Denmark": "#d62728",   // Red
+        "Estonia": "#9467bd",   // Purple
+        "Finland": "#8c564b",   // Brown
+        "France": "#e377c2",    // Pink
+        "Germany": "#7f7f7f",   // Gray
+        "Greece": "#17becf",    // Light Blue
+        "Hungary": "#bcbd22",   // Olive
+        "Iceland": "#ff9896",   // Light Red
+        "Italy": "#c7c7c7",     // Light Gray
+        "Latvia": "#d62728",    // Red (same as Denmark for simplicity)
+        "Lithuania": "#ff7f0e", // Orange (same as Belgium for simplicity)
+        "Netherlands": "#1f77b4", // Blue (same as Austria for simplicity)
+        "Norway": "#2ca02c",    // Green (same as Czechia for simplicity)
+        "Portugal": "#9467bd",  // Purple (same as Estonia for simplicity)
+        "Slovakia": "#8c564b",  // Brown (same as Finland for simplicity)
+        "Slovenia": "#e377c2",  // Pink (same as France for simplicity)
+        "Spain": "#7f7f7f",     // Gray (same as Germany for simplicity)
+        "Sweden": "#17becf",    // Light Blue (same as Greece for simplicity)
+        "Turkey": "#bcbd22",    // Olive (same as Hungary for simplicity)
+        "UK": "#ff9896"        // Light Red (same as Iceland for simplicity)
+      };
+  
+    // Use the country name to get the color
+    const color = colorMapping[countryName] || "#ffffff"; // Default to black if not found
+  
+>>>>>>> aaaa4885acf57a88ca09dc800280944fae21f178
     g.selectAll(".dot")
         .data(countryData)
         .enter().append("circle")
@@ -434,6 +501,7 @@ g.append("g")
         .attr("cy", d => y(d.dosage))
         .attr("r", 3)
         .attr("fill", color);
+<<<<<<< HEAD
 
 
 
@@ -444,19 +512,31 @@ g.append("g")
     var headlineTxt = document.getElementById("countyName");    
     headlineTxt.textContent = countryName;                      
     scatterplotDiv.appendChild(headLineDiv);                    
+=======
+>>>>>>> aaaa4885acf57a88ca09dc800280944fae21f178
   }
   
   document.addEventListener("DOMContentLoaded", function () {
     const countries = document.querySelectorAll("#map g");
+<<<<<<< HEAD
     console.log("Countries found:", countries);  
     countries.forEach(country => {
         console.log("Adding event listener to:", country.id);  
+=======
+    console.log("Countries found:", countries);  // Log found country elements
+    countries.forEach(country => {
+        console.log("Adding event listener to:", country.id);  // Log each country id
+>>>>>>> aaaa4885acf57a88ca09dc800280944fae21f178
         country.addEventListener("click", countryClick);
     });
   });
   
   function countryClick(event) {
+<<<<<<< HEAD
     const countryName = event.currentTarget.id; 
+=======
+    const countryName = event.currentTarget.id;  // Assuming each country in the SVG has an id corresponding to the country name
+>>>>>>> aaaa4885acf57a88ca09dc800280944fae21f178
     console.log("Country clicked:", countryName);
     if (data[countryName]) {
         renderScatterPlot(data[countryName], countryName);
@@ -465,6 +545,7 @@ g.append("g")
     }
   }
 
+<<<<<<< HEAD
   
 document.querySelectorAll('.country').forEach(function(country) {
   country.addEventListener('click', function() {
@@ -475,5 +556,17 @@ document.querySelectorAll('.country').forEach(function(country) {
     document.getElementById('text-content').style.display = 'block';
    
     drawScatterplot(countryName); 
+=======
+  // Assuming you already have a way to detect when a country is clicked.
+document.querySelectorAll('.country').forEach(function(country) {
+  country.addEventListener('click', function() {
+    // Get the country name (you can adapt this to match your data)
+    const countryName = this.getAttribute('data-country-name');
+    // Show the container
+    document.getElementById('scatterplot-container').style.display = 'block';
+    document.getElementById('text-content').style.display = 'block';
+    // Your existing code to draw the scatterplot
+    drawScatterplot(countryName); // Make sure this function exists
+>>>>>>> aaaa4885acf57a88ca09dc800280944fae21f178
   });
 });
