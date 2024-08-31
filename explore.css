@@ -1,0 +1,130 @@
+body {
+    background-color: #424242;
+    font-family: noto-serif-hebrew, sans-serif;
+    font-style: medium;
+    font-weight: 100;
+    margin: 0; /* Remove default margin for body */
+    display: flex; /* Make body a flex container */
+  /* Center the container horizontally 
+    align-items: center; /* Center the container vertically */
+    height: 100vh; /* Full viewport height */
+}
+#map {
+    width: 700px; /* Make map take full width of its container */
+    height: 700px; /* Set a fixed height for the map or adjust as needed */
+    position: absolute;
+    top: 50px;
+    left: 350px;
+    background-color: none; /* Optional: background color for map */
+    box-sizing: border-box; /* Ensure padding and border are included in width and height calculations */
+}
+
+
+#scatterplot {
+    display: none; /* Initially hidden */
+    position: absolute; /* Position it absolutely within the container */
+    justify-content: center;
+    z-index: 10;
+    padding: 20px;
+    width: 380px;
+    height: 450px;
+    top: 120px;
+    left: 1000px;   
+    border: 2px solid #ff9900;
+    background-color: #424242; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align the buttons horizontally */
+  font-family: noto-serif-hebrew, sans-serif;
+  font-weight: medium;
+  color: white;
+}
+
+  #scatterplot-header {
+    font-family: noto-serif-hebrew, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  #scatterplot-paragraph {
+    font-family: noto-serif-hebrew, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 40px;
+    text-align: center;
+  } 
+
+
+/* Container for View Mode */
+.navigation {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  display: flex;
+  transform: translate(-50%, -55%);
+  width: auto;
+  height: auto;
+  background-color: #424242;
+  border: 2px solid #ff9900;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* View Mode Label */
+ h3 {
+  font-family: noto-serif-hebrew, sans-serif;
+  font-size: 30px;
+  font-weight: regular;
+  color: white;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Container for buttons */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align the buttons horizontally */
+}
+
+
+
+
+button {
+  background-color: #424242;
+  border: 2px solid #ff9900;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+  color: #fff;
+  transition: background-color 0.3s;
+  font-family: inherit;
+  font-size: 15px;
+}
+
+
+button:hover {
+  background-color: #ffcc66;
+}
+
+.button-container-about {
+  position: absolute; /* Allows free positioning */
+  bottom: 10px; /* Adjust based on where you want to position it vertically */
+  right: 20px; /* Adjust based on where you want to position it horizontally */
+  z-index: 100;
+
+}
+
+
